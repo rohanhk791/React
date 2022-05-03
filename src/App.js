@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
+import { Route, Routes } from "react-router-dom";
 import './App.css';
+import Navbarc from './Bootstrap/Navbar';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import Home from "./Components/home"
+import Signup from "./Components/signup";
+import Login from "./Components/login";
+import Contact from "./Components/Contact";
+import Aboutus from "./Components/About";
+import Icons from "./Bootstrap/Icons";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  class App extends Component {
+  render() {
+    return (
+      <div>
+        <Navbarc/>
+        <Icons/>
+        <Home/>
+        <br>
+        </br>
+        <br>
+        </br>
+        <Routes>
+          <Route path="signup" element={<Signup />} />
+          <Route path="login" element={<Login />} />
+          <Route path="home" element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<Aboutus />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+
+      </div>
+    );
+      
 }
-
+  }
 export default App;
