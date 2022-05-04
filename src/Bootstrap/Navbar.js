@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navbarc()
+function Navbarc(props)
 {
 return (
     <div className="App">
@@ -12,7 +12,7 @@ return (
        <span class="icon-bar"></span>
        <span class="icon-bar"></span>                        
    </button>
-     <a class="navbar-brand" href="#">ABC</a>  
+     <a class="navbar-brand" href="#">{props.name}</a>  
    </div>       
      <div class="collapse navbar-collapse" id="myNavbar">
    <ul class="nav navbar-nav">  
